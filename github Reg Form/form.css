@@ -1,0 +1,253 @@
+/** @format */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url(img/chess-bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: "Roboto", sans-serif;
+
+  html {
+    font-size: 62.5%;
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* background-color: blue; */
+  padding: 1.5rem 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+}
+
+header h2 {
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.navigation a {
+  position: relative;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 3.5rem;
+}
+
+.navigation a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: -6px;
+  background: #fff;
+  border-radius: 5px;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: 0.5s;
+}
+
+.navigation a:hover:after {
+  transform: scaleX(1);
+}
+
+.navigation .btn-click-pop {
+  width: 6rem;
+  height: 2.5rem;
+  background: none;
+  border: 2px solid #fff;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-left: 3rem;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  transition: 0.5s;
+}
+
+.navigation .btn-click-pop:hover {
+  background: white;
+  color: #333;
+}
+
+.wrapper {
+  position: relative;
+  width: 35rem;
+  height: 35rem;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 2px 2px #333;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease, height 0.2s ease-in;
+
+  transform: scale(0);
+}
+
+.wrapper.log-active {
+  transform: scale(1);
+}
+
+.wrapper .form-box.login {
+  transition: transform 0.19s ease;
+}
+
+.wrapper .form-box.register {
+  position: absolute;
+  transition: none;
+  transform: translateX(100%);
+  transition: transform 0.19s ease;
+}
+.wrapper.active {
+  height: 40rem;
+}
+
+.wrapper.active .login {
+  transition: none;
+  transform: translateX(-100%);
+}
+.wrapper.active .register {
+  transform: translateX(0);
+}
+
+.form-box h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+}
+.wrapper .form-box {
+  width: 100%;
+  padding: 4rem;
+}
+
+.input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid #fff;
+  margin: 3rem 0;
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  color: #fff;
+  padding: 0 3rem 0 1rem;
+}
+
+.input-box .icon {
+  color: #fff;
+  font-size: 1.5rem;
+  position: absolute;
+  right: 7px;
+  line-height: 1rem;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -0.6rem;
+  /* transform: scale(1.1); */
+}
+
+.remember-forget {
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 500;
+  margin: -1.5rem 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.remember-forget label input {
+  margin-right: 4px;
+  accent-color: #162938;
+}
+
+.remember-forget a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.remember-forget a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+}
+
+.form-btn {
+  width: 100%;
+  height: 3rem;
+  background-color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  color: black;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.login-register {
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 500;
+  margin: 25px 0 10px;
+}
+
+.login-register p a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+.login-register p a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+
+.wrapper .close-login {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #333;
+  font-size: 2rem;
+  background-color: #fff;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
